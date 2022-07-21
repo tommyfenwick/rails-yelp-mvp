@@ -11,13 +11,13 @@ Restaurant.destroy_all
 puts "Creating restaurants..."
 
 5.times do
-  restaurant = Restaurant.create(
+  restaurant = Restaurant.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.street_address,
     phone_number: Faker::PhoneNumber.phone_number,
-    category: Faker::Restaurant.type
+    category: ["chinese", "italian", "japanese", "french", "belgian"].sample
   )
-  puts restaurant
+  puts restaurant.name
 end
 
 puts "Finished!"
